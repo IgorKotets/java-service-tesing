@@ -6,16 +6,16 @@ import org.junit.Test;
 public class SimpleTest {
 
     @BeforeClass
-    public void setUp() {
+    public static void setUp() {
         // code that will be invoked when this test is instantiated
     }
 
-    @Test(groups = "fast")
+    @Test
     public void aFastTest() {
         System.out.println("Fast test");
     }
 
-    @Test(groups = "slow")
+    @Test
     public void aSlowTest() {
         System.out.println("Slow test");
     }
