@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" parallel="classes" thread-count="5">
+
+    <test name="Service Tests">
+        <classes>
+            <class name="my.first.program.CreateRepo"/>
+            <class name="my.first.program.GetBody"/>
+            <class name="my.first.program.GetRateLimit"/>
+        </classes>
+    </test>
+</suite>
