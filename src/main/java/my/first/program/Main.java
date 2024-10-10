@@ -20,6 +20,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         try {
+
             CloseableHttpClient client = new DefaultHttpClient();
             HttpGet request = new HttpGet(PropertyReader.getProperty("bnmUrl"));
             CloseableHttpResponse response = client.execute(request);
@@ -50,10 +51,14 @@ public class Main {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 
-//            NominalValueCheck checker = new NominalValueCheck();
-//            checker.checkNominals(valCurs);
+            NominalValueCheck checker = new NominalValueCheck();
+            checker.checkNominals(valCurs);
 
             ExchangeRateDisplay.displayExchangeRate(valCurs,"EUR");
+
+            AverageAmount.calculateAverage(valCurs);
+
+
         } catch (Exception e) {
             System.out.println("Something went wrong");
         }

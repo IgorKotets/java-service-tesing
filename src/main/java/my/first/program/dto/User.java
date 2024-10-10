@@ -21,7 +21,7 @@ public class User {
         this.login = login;
     }
 
-    public static final String Login = "Vladimit-Lutic";
-    public static final String Id = "183031966";
+    public static final String LOGIN = "IgorKotets";
+    public static final String ID = "183031966";
 
 }

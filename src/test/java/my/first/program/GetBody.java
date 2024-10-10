@@ -25,19 +25,25 @@ public class GetBody {
 
     @AfterMethod
     public void closeResourse() throws IOException {
-        client.close();
-        response.close();
+        if (response != null) {
+            response.close();
+        }
+        if (client != null) {
+            client.close();
+        }
     }
 
     @Test
     public void loginTest() throws IOException {
 
-        HttpGet request = new HttpGet(PropertyReader.getProperty("base_url") + "/users/" + User.Login);
+        HttpGet request = new HttpGet(PropertyReader.getProperty("base_url") + "/users/" + User.LOGIN);
         response = client.execute(request);
 
         User user = GitHubUtility.deserialize(response, User.class);
 
-        Assert.assertEquals(user.getLogin(), User.Login);
+        Assert.assertEquals(user.getLogin(), User.LOGIN);
 
     }
+
+
 }
